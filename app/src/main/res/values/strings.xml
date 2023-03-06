@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Quaky</string>
+    <string name="newest_earthquake">Newest Earthquake</string>
+    <string name="history">History</string>
+    <string name="search_start">Start</string>
+    <string name="search_limit">Limit</string>
+    <string name="search_startdate">Start Date</string>
+    <string name="search_enddate">End Date</string>
+    <string name="search_searchbtn">Search</string>
+    <string name="details">Details</string>
+</resources>

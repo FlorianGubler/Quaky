@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <TextView
+        android:id="@+id/AppTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/quaky_default"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activityTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/history"
+        android:textAlignment="center"
+        android:textColor="@color/quaky_second"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AppTitleText" />
+
+    <LinearLayout
+        android:id="@+id/mainSiteLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="105dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityTitleText">
+
+        <LinearLayout
+            android:id="@+id/filterContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/filterLimitContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/searchStartInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:hint="@string/search_start"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <EditText
+                    android:id="@+id/searchLimitInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:hint="@string/search_limit"
+                    android:inputType="number"
+                    android:text="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/filterDateContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/searchStartDateInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:hint="@string/search_startdate"
+                    android:inputType="date" />
+
+                <LinearLayout
+                    android:id="@+id/searchButtonAndDateContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/searchEndDateInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="@string/search_enddate"
+                        android:inputType="date" />
+
+                    <Button
+                        android:id="@+id/searchButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="6"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="@string/search_searchbtn"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/line" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
