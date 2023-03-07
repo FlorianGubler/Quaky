@@ -1,0 +1,114 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #00796B;
+	color: #FFFFFF;
+	padding: 20px;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+main {
+	padding: 20px;
+}
+
+.app-info {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.app-info img {
+	max-width: 200px;
+}
+
+.app-info h2 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.app-info p {
+	margin-bottom: 20px;
+}
+
+.button {
+	display: inline-block;
+	background-color: #00796B;
+	color: #FFFFFF;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #004D40;
+}
+
+.screenshots {
+	margin-bottom: 40px;
+}
+
+.screenshot {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.screenshot img {
+	max-width: 300px;
+}
+
+.reviews {
+	margin-bottom: 40px;
+}
+
+.review-header img {
+	max-width: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.review-header h3 {
+	display: inline-block;
+	margin: 0;
+}
+
+.review-header p {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.app-details {
+	margin-bottom: 40px;
+}
+
+.app-details li {
+	margin-bottom: 10px;
+}
+
+.app-details li strong {
+	display: inline-block;
+	width: 100px;
+	font-weight: bold;
+	margin-right: 10px;
+}
