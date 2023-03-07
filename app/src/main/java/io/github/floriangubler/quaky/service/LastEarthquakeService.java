@@ -58,7 +58,7 @@ public class LastEarthquakeService extends Service {
         try{
             return objectMapper.readValue(Files.newInputStream(new File(this.getFilesDir(), LAST_EARTHQUAKE_FILENAME).toPath()), Earthquake.class);
         } catch (Exception e){
-            e.printStackTrace();
+            //Unhandled because OK if no earthquake found local
             return null;
         }
     }

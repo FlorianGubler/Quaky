@@ -21,6 +21,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
@@ -38,6 +39,8 @@ public class HistoryActivity extends AppCompatActivity {
 
     EveryEarthquakeAPIService apiService;
     boolean apiServiceBound = false;
+
+    private final String EUROPEAN_DATE_FORMAT = "dd.MM.yyyy";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,7 @@ public class HistoryActivity extends AppCompatActivity {
             if(state == ValidationState.SEARCH_NORMAL){
                 result = apiService.search(Integer.parseInt(startInput.getText().toString()), Integer.parseInt(limitInput.getText().toString()));
             } else if(state == ValidationState.SEARCH_DATE){
-                result = apiService.search(Integer.parseInt(startInput.getText().toString()), Integer.parseInt(limitInput.getText().toString()));
+                result = apiService.searchDate(Integer.parseInt(startInput.getText().toString()), Integer.parseInt(limitInput.getText().toString()), LocalDate.parse(startDateInput.getText(), DateTimeFormatter.ofPattern(EUROPEAN_DATE_FORMAT)), LocalDate.parse(endDateInput.getText(), DateTimeFormatter.ofPattern(EUROPEAN_DATE_FORMAT)));
             } else{
                 throw new Exception("Input validation failed");
             }

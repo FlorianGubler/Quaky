@@ -68,6 +68,7 @@ public class DetailActivity extends AppCompatActivity {
         magicFieldLoader(earthquake);
     }
 
+    /* Simple function for loading all attributes of an Object to a View layout (Lists are looped) */
     private void magicFieldLoader(Object o) throws IllegalAccessException {
         //Create all UI Objects dynamically
         for(Field field : o.getClass().getDeclaredFields()){

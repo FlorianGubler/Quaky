@@ -2,10 +2,22 @@ package io.github.floriangubler.quaky.widget;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.IBinder;
 import android.widget.RemoteViews;
 
+import androidx.work.ExistingWorkPolicy;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
+import androidx.work.WorkRequest;
+
 import io.github.floriangubler.quaky.R;
+import io.github.floriangubler.quaky.service.EveryEarthquakeAPIService;
+import io.github.floriangubler.quaky.service.LastEarthquakeService;
+import io.github.floriangubler.quaky.work.NewEarthquakeWorker;
 
 /**
  * Implementation of App Widget functionality.
@@ -14,14 +26,16 @@ public class LastEarthquakeWidget extends AppWidgetProvider {
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
-
-        CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.last_earthquake_widget);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
+        views.setTextViewText(R.id.lastEarthquakeWidgetText, "-");
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
+
+        //On start call worker for update data
+        OneTimeWorkRequest workRequest = OneTimeWorkRequest.from(NewEarthquakeWorker.class);
+        WorkManager.getInstance(context).enqueueUniqueWork("Update last earthquake", ExistingWorkPolicy.KEEP, workRequest);
     }
 
     @Override

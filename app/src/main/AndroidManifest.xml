@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/appicon"
+        android:icon="@drawable/appicon_transparent"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quaky"
@@ -25,6 +25,11 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/last_earthquake_widget_info" />
         </receiver>
+
+        <service
+            android:name=".work.NewEarthquakeWorker"
+            android:enabled="true"
+            android:process=":worker"/>
 
         <service
             android:name=".service.EveryEarthquakeAPIService"

@@ -4,6 +4,7 @@ import static android.app.PendingIntent.getActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         lastEarthquakeCountry = findViewById(R.id.lastEarthquakeCountry);
 
         //Start background scheduler
-        new PeriodicWorkRequest.Builder(NewEarthquakeWorker.class, 1, TimeUnit.SECONDS).build();
+        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(NewEarthquakeWorker.class, 15, TimeUnit.MINUTES).build();
+        WorkManager.getInstance(this).enqueue(workRequest);
     }
 
     @Override

@@ -2,21 +2,21 @@
     style="@style/Widget.Quaky.AppWidget.Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/quaky_default"
     android:theme="@style/Theme.Quaky.AppWidgetContainer">
 
     <TextView
-        android:id="@+id/appwidget_text"
-        style="@style/Widget.Quaky.AppWidget.InnerView"
+        android:id="@+id/WidgetTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:text="@string/newest_earthquake"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lastEarthquakeWidgetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WidgetTitle"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>

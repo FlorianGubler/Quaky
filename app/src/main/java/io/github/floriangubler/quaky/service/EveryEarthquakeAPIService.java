@@ -114,8 +114,8 @@ public class EveryEarthquakeAPIService extends Service {
         HttpUrl.Builder urlBuilder = Objects.requireNonNull(HttpUrl.parse(URL + "/earthquakesByDate")).newBuilder();
         urlBuilder.addQueryParameter("start", String.valueOf(start));
         urlBuilder.addQueryParameter("count", String.valueOf(limit));
-        urlBuilder.addQueryParameter("startDate", String.valueOf(startDate));
-        urlBuilder.addQueryParameter("endDate", String.valueOf(endDate));
+        urlBuilder.addQueryParameter("startDate", startDate.toString());
+        urlBuilder.addQueryParameter("endDate", endDate.toString());
 
         Response res = createCall(urlBuilder.build().toString());
         assert res.body() != null;
