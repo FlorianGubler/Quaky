@@ -8,4 +8,11 @@
     <string name="search_enddate">End Date</string>
     <string name="search_searchbtn">Search</string>
     <string name="details">Details</string>
+    <string name="filepath_lastearthquake">lastearthquake.json</string>
+
+    <string name="link_template">&lt;a href="%%LINK%%">%%TEXT%%&lt;/a></string>
+
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
 </resources>
