@@ -80,9 +80,11 @@ public class NewEarthquakeWorker extends Worker {
                 }
                 return Result.success();
             } catch (Exception e){
+                e.printStackTrace();
                 return Result.failure();
             }
         } else{
+            System.err.println("Services not bound");
             return Result.failure();
         }
     }
