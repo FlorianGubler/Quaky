@@ -27,11 +27,6 @@
         </receiver>
 
         <service
-            android:name=".work.NewEarthquakeWorker"
-            android:enabled="true"
-            android:process=":worker"/>
-
-        <service
             android:name=".service.EveryEarthquakeAPIService"
             android:enabled="true"
             android:exported="true" />
